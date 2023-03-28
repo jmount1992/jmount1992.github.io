@@ -20,7 +20,7 @@ feature_row:
     btn_label: "Publications"
   - image_path: /assets/images/BrainBuzz_original.jpg
     alt: "Media Appearances"
-    url: "/media/"
+    url: "/media_events/"
     btn_class: "btn--primary"
     btn_label: "Media and Events"  
 ---
