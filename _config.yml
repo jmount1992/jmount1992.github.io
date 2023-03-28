@@ -1,0 +1,121 @@
+# Site settings
+locale: en-AU
+title: James Mount
+email: jmount1992@example.com
+description: A website about James Mount, a robotics engineer, and STEM communicator with a passion for life.
+url: "https://jamesmount.tech" 
+minimal_mistakes_skin: deep_sea
+words_per_minute: 200
+
+twitter_username: jmount1992
+github_username:  jmount1992
+
+# Social settings
+twitter:
+  username: jmount1992
+github:
+  username: jmount1992
+
+
+# Build settings
+markdown: kramdown
+timezone: Australia/Brisbane
+remote_theme: mmistakes/minimal-mistakes@4.24.0
+plugins:
+  - jekyll-remote-theme
+  - jekyll-seo-tag
+  - jekyll-include-cache
+  - jekyll-tabs
+
+# Includes
+include:
+  - _pages
+
+# Collections
+collections:
+  publications:
+  media_and_events:
+  projects:
+
+# Minimal Mistakes - Site Author Configuration
+author:
+name: "James Mount"
+bio: "A robotics engineer, STEM communicator, and lover of life."
+location: "Sun Peaks, Canada"
+links:
+  - label: "Email"
+    icon: "fas fa-fw fa-envelope-square"
+    url: "mailto:jmount1992@example.com"
+  - label: "Twitter"
+    icon: "fab fa-fw fa-twitter-square"
+    url: "https://twitter.com/jmount1992"
+
+
+# Author Sidebar Settings
+author:
+  name   : "James Mount"
+  avatar : "/assets/images/jm_profile.jpeg"
+  bio    : "Robotics Engineer, STEM Communicator, Passion For Life"
+  location: "Sun Peaks, Canada"
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jmount1992/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/jmount1992"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/"
+    - label: "Email"
+      icon: "fas fa-envelope"
+      url: "/about_me#contact_me"
+
+
+# Footer Settings
+footer:
+  links:
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jmount1992/"
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/jmount1992"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/jmount1992"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope"
+      url: "/about_me#contact_me"
+
+  
+# Custom Javascript
+after_footer_scripts:
+  - /assets/js/tabs.js
+  - /assets/js/slider.js
+
+  
+# Page Defaults
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      show_date: true
+      # comments: true
+      share: true
+      related: true
+      classes: wide
+
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true
+      classes: wide

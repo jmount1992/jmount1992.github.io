@@ -1,0 +1,88 @@
+{% if include.id %}
+  {% assign feature_row = page[include.id] %}
+{% else %}
+  {% assign feature_row = page.feature_row %}
+{% endif %}
+
+{% if alternate_feature_row %}
+
+  <div class="feature__wrapper">
+    {% for f in feature_row %}
+      <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
+        <div class="archive__item">
+          {% if f.image_path %}
+            <div class="archive__item-teaser">
+            <a href="{{ f.url | relative_url }}">
+              <img src="{{ f.image_path | relative_url }}" alt="{% if f.alt %}{{ f.alt }}{% endif %}">
+              {% if f.image_caption %}
+                <span class="archive__item-caption">{{ f.image_caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+              {% endif %}
+            </a>
+            </div>
+          {% endif %}
+
+          <div class="archive__item-body">
+            {% if f.title %}
+              <h2 class="archive__item-title">{{ f.title }}</h2>
+            {% endif %}
+
+            {% if f.excerpt %}
+              <div class="archive__item-excerpt">
+                {{ f.excerpt | markdownify }}
+              </div>
+            {% endif %}
+
+            {% if f.url %}
+              <p style="text-align: center; width: 100%; margin: 0.5em 0 0 0;"><a style="width: 100%;" href="{{ f.url | relative_url }}" class="btn {{ f.btn_class }}">HERE 1</a></p>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+{% else %}
+
+  <div class="feature__wrapper">
+
+      {% for f in feature_row %}
+        <div class="feature__item{% if include.type %}--{{ include.type }}{% endif %}">
+          <div class="archive__item">
+            {% if f.title %}
+              <h2 class="archive__item-title">{{ f.title }}</h2>
+            {% endif %}
+
+            
+            <div class="archive__item-teaser">
+              {% if f.image_path %}
+                <a href="{{ f.url | relative_url }}">
+                  <img src="{{ f.image_path | relative_url }}" alt="{% if f.alt %}{{ f.alt }}{% endif %}">
+                  {% if f.image_caption %}
+                    <span class="archive__item-caption">{{ f.image_caption | markdownify | remove: "<p>" | remove: "</p>" }}</span>
+                  {% endif %}
+                </a>
+              {% else %}
+                <div class="responsive-video-container">
+                  <iframe src="{{ f.video_url }}" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="archive__item-body">
+              {% if f.excerpt %}
+                <div class="archive__item-excerpt">
+                  {{ f.excerpt | markdownify }}
+                </div>
+              {% endif %}
+
+              {% if f.url %}
+                <p style="text-align: center; width: 100%; margin: 0.5em 0 0 0;"><a style="width: 100%;" href="{{ f.url | relative_url }}" class="btn {{ f.btn_class }}">{{ f.btn_label | default: site.data.ui-text[site.locale].more_label | default: "Learn More" }}</a></p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+  </div>
+  
+{% endif %}
+
