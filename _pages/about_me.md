@@ -3,13 +3,11 @@ title: About Me
 permalink: /about_me/
 ---
 
-I am a robotics engineer, engineering educator and STEM communicator. I enjoy pushing the boundaries of technology by designing and building robotic systems and assessing their capabilities in real-world applications. I am also passionate about creating and presenting engaging demonstrations to teach others about STEM.
+When you think of technology, what comes to mind? For me, it's about identifying and solving people's problems using cutting-edge innovations and creating solutions that push the boundaries to make a difference. I'm a robotics engineer, engineering educator, and STEM communicator. Whether it's designing and building robotic systems, exploring new STEM concepts, or teaching others about the latest technologies, I'm passionate about it all.
 
-I have worked with universities, governments and the private sector for over five years and completed several highly-successful projects. Some of these include, assessing the readiness of the Australian roads for autonomous vehicles on a multi-million dollar government contract. As well as the development and manufacturing of a fleet of mini-autonomous vehicles that are used for research and education.
+My love for technology started early on, and it's only grown stronger since then and led me to gain a PhD in the field of Robotics. I thrive on designing and building robotic systems and assessing their capabilities in real-world applications. I've partnered with top universities, governments, and private sector organizations for over five years, successfully completing multiple [projects](/projects) that have made a tangible impact in the real world. My communication skills have been honed over the years as a Sessional Academic alongside the opportunities to guest-star on children's television shows and present interactive demonstrations to large audiences. You can check them out [here](/media_events). 
 
-My previous roles as a sessional academic at the Queensland University of Technology and as a PhD student as part of the Australian Centre for Robotic Vision have allowed me to explore my passion for education. For the past 10 years, I have taught engineering at QUT and developed engaging demonstrations showing off upcoming robotics technology. This has furthered my communication skill set and provided me with an innovative way to bring all my passions together. Some of my career highlights include guest-starring in several children's television shows and presenting an interactive demonstration about autonomous vehicles to an audience of a thousand people.
-
-I would love to build ever more sophisticated robots, like Disney's Robotic Stuntman, as well as continue to create and deliver engaging presentations that help teach the public about all things "technology". I hold a PhD in the field of robotics.
+So, whether you're curious about robotics or want to learn more about the latest STEM innovations, I'm here to help. Join me on this exciting journey, and let's explore the endless possibilities of technology together!
 
 
 <h1 id="contact_me">Contact Me</h1>
