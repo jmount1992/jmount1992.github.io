@@ -1,5 +1,5 @@
 ---
-title: A Static Website
+title: "Building A Static Website - Part 1: Learning Jekyll"
 categories:
   - Website Building
 tags:
@@ -7,14 +7,12 @@ tags:
   - markdown
   - tutorial
 excerpt: Gain an understanding of why we use static site generators and work your way through a step-by-step guide on how to build your first static website with Jekyll.
-published: false
 ---
 
 This tutorial will first explain the reasoning behind using a static site generator, specifically Jekyll, before providing a step-by-step guide on how to create your first static website using Jekyll.
 
-This is the first article in the static website building series. The other articles in this series include:
-- [Customising Themes]({% post_url 2023-03-17-CustomisingThemes %})
-- [Another Article](#)
+This is the first article in the static website building series. 
+
 
 **Prerequisites**: Familiarity with using your operating system's terminal, an understanding of how the web works, and some knowledge of HTML, CSS, and JavaScript is recommended. Feel free to check out the [Understanding The Web]({% post_url 2023-03-15-UnderstandingTheWeb %}) article to gain some insights on how the web works.
 
@@ -39,7 +37,7 @@ To create a static website from scratch we would have to:
 6. Establish some form of traffic reporting (optional).
 7. And possibly a few other steps.
 
-As you can see there are quite a lot of steps, especially, when you probably want to get up and running quickly and want to focus on content. We could make our life a little easier by using a website template that already has HTML, CSS, and Javascript alongside Github pages. However, even then we are still writing in HTML, which still isn't as natural as writing a word document. We would also still have to do pagination, navigation bars, latest post links, etc. This can make it cumbersome and quite painful. Instead we could use what is known as a static site generator.
+As you can see there are quite a lot of steps, especially, when you probably want to get up and running quickly and want to focus on content. We could make our life a little easier by using a website template that already has HTML, CSS, and Javascript alongside Github Pages. However, even then we are still writing in HTML, which still isn't as natural as writing a word document. We would also still have to do pagination, navigation bars, latest post links, etc. This can make it cumbersome and quite painful. Instead we could use what is known as a static site generator.
 
 **Note**: You could also use a website builder such as Wix or WordPress. However, what if we want to be cheap and not have to pay for the service?
 
@@ -51,11 +49,11 @@ A static site generator is a script(s) that takes in content and templates, and 
 
 ## Jekyll
 
-Jekyll is one of many static site generators. However, Github pages utilises Jekyll and hence why we will be using it today. Jekyll uses the Ruby programming language, but don't worry, we don't need to actually write anything in Ruby. Jekyll takes in Markdown files (our content), plus Liquid, HTML, CSS, and Javascript templates to generate static websites.
+Jekyll is one of many static site generators. However, Github Pages utilises Jekyll and hence why we will be using it today. Jekyll uses the Ruby programming language, but don't worry, we don't need to actually write anything in Ruby. Jekyll takes in Markdown files (our content), plus templates consisting of Liquid, HTML, CSS, and Javascript to generate static websites.
 
 ## Ruby 101
 
-Ruby is a programming language. In the Ruby language you will hear a lot about Gems. Gems are reusable pieces of code. If you know Python or C/C++ you might think of these has modules or libraries. A Gemfile is a list of gems required by a project, similar to a Python requirements file or a C/C++ header file. There is a special Gem called *Bundler*. Bundler is like Python's pip, it is used to install a gemfile, but can also be used to execute Gems using the current environment (like a virtual environment). More info on Bundler and Gemfiles can be found in this [article](https://www.moncefbelyamani.com/the-beginner-s-guide-to-bundler-and-gemfiles/) written by Moncef Belyami.
+Ruby is a programming language. In the Ruby language you will hear a lot about Gems. Gems are reusable pieces of code. If you know Python or C/C++ you might think of these as modules or libraries. A Gemfile is a list of gems required by a project, similar to a Python requirements file or a C/C++ header file. There is a special Gem called *Bundler*. Bundler is like Python's pip, it is used to install a gemfile, but can also be used to execute Gems using the current environment (like a virtual environment). More info on Bundler and Gemfiles can be found in later in the [article](#a-little-more-about-bundler-and-gemfiles). 
 
 # Creating Your First Website
 
@@ -80,13 +78,13 @@ mkdir <my-website-folder> && cd <my-website-folder>
 
 {%tab step_1a MacOS %}
 ```bash
-code to be determined
+mkdir <my-website-folder> && cd <my-website-folder>
 ```
 {% endtab %}
 
 {%tab step_1a Windows %}
 ```bash
-code to be determined
+mkdir <my-website-folder> && cd <my-website-folder>
 ```
 {% endtab %}
 {% endtabs %}
@@ -103,13 +101,13 @@ touch gemfile
 
 {%tab step_2a MacOS %}
 ```bash
-code to be determined
+touch gemfile
 ```
 {% endtab %}
 
 {%tab step_2a Windows %}
 ```bash
-code to be determined
+copy gemfile+
 ```
 {% endtab %}
 {% endtabs %}
@@ -165,13 +163,13 @@ touch index.md
 
 {%tab step_5a MacOS %}
 ```bash
-code to be determined
+touch index.md
 ```
 {% endtab %}
 
 {%tab step_5a Windows %}
 ```bash
-code to be determined
+copy index.md+
 ```
 {% endtab %}
 {% endtabs %}
@@ -199,13 +197,13 @@ bundle exec jekyll serve --livereload
 
 {%tab step_7a MacOS %}
 ```bash
-code to be determined
+bundle exec jekyll serve --livereload
 ```
 {% endtab %}
 
 {%tab step_7a Windows %}
 ```bash
-code to be determined
+bundle exec jekyll serve --livereload
 ```
 {% endtab %}
 {% endtabs %}
@@ -229,13 +227,13 @@ mkdir _layouts && touch _layouts/default.html
 
 {%tab step_1b MacOS %}
 ```bash
-code to be determined
+mkdir _layouts && touch _layouts/default.html
 ```
 {% endtab %}
 
 {%tab step_1b Windows %}
 ```bash
-code to be determined
+mkdir _layouts && copy _layouts/default.html+
 ```
 {% endtab %}
 {% endtabs %}
@@ -270,13 +268,13 @@ mkdir _includes && touch _includes/navigation.html
 
 {%tab step_3b MacOS %}
 ```bash
-code to be determined
+mkdir _includes && touch _includes/navigation.html
 ```
 {% endtab %}
 
 {%tab step_3b Windows %}
 ```bash
-code to be determined
+mkdir _includes && copy _includes/navigation.html+
 ```
 {% endtab %}
 {% endtabs %}
@@ -304,13 +302,13 @@ mkdir _data_ && touch _data/navigation.html
 
 {%tab step_5b MacOS %}
 ```bash
-code to be determined
+mkdir _data_ && touch _data/navigation.html
 ```
 {% endtab %}
 
 {%tab step_5b Windows %}
 ```bash
-code to be determined
+mkdir _data_ && copy _data/navigation.html+
 ```
 {% endtab %}
 {% endtabs %}
@@ -346,13 +344,13 @@ bundle exec jekyll serve --livereload
 
 {%tab step_8b MacOS %}
 ```bash
-code to be determined
+bundle exec jekyll serve --livereload
 ```
 {% endtab %}
 
 {%tab step_8b Windows %}
 ```bash
-code to be determined
+bundle exec jekyll serve --livereload
 ```
 {% endtab %}
 {% endtabs %}
@@ -369,13 +367,13 @@ touch about_me.md && touch projects.md
 
 {%tab step_9b MacOS %}
 ```bash
-code to be determined
+touch about_me.md && touch projects.md
 ```
 {% endtab %}
 
 {%tab step_9b Windows %}
 ```bash
-code to be determined
+copy about_me.md+ && copy projects.md+
 ```
 {% endtab %}
 {% endtabs %}
@@ -431,13 +429,13 @@ mkdir _posts && touch _posts/<date>_pub1.md && touch _posts/<date>_pub1.md
 
 {%tab step_1c MacOS %}
 ```bash
-code to be determined
+mkdir _posts && touch _posts/<date>_pub1.md && touch _posts/<date>_pub1.md
 ```
 {% endtab %}
 
 {%tab step_1c Windows %}
 ```bash
-code to be determined
+mkdir _posts && copy _posts/<date>_pub1.md+ && copy _posts/<date>_pub1.md+
 ```
 {% endtab %}
 {% endtabs %}
@@ -492,7 +490,7 @@ defaults:
 ```
 
 {:start="5"}
-5. The deployment article within this static website building series utilises Github pages for serving your website. Github page servers are most likely not located within your time zone. This can lead to some odd things happening. You should also add your time zone to the configuration file. For example, if you are from Brisbane, Australia, you would add the following code `timezone: Australia/Brisbane` to `_config.yml`. You can find a list of time zones [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). Remember, as we made changes to the configuration file you will need to reserve the website.
+5. The deployment article within this static website building series utilises Github Pages for serving your website. Github page servers are most likely not located within your time zone. This can lead to some odd things happening. You should also add your time zone to the configuration file. For example, if you are from Brisbane, Australia, you would add the following code `timezone: Australia/Brisbane` to `_config.yml`. You can find a list of time zones [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). Remember, as we made changes to the configuration file you will need to reserve the website.
 
 {:start="6"}
 6. Now we need a page to display and link to our individual posts. Create a new page, called `posts.md` in the root directory of the website and add the following code. Make sure you also add the appropriate entry into the `navigation.yml` file. In the code below, you can see that we access the posts using the code `site.posts` which can be used, along with a for loop, to cycle through the posts and display the title and excerpt of each post.
@@ -614,7 +612,7 @@ A Gemfile is a list of dependencies required by your Ruby project. Bundler is a 
 3. Now in a terminal navigate to the website root directory and `run bundle exec jekyll -v`. You should get `Jekyll 3.9.1` printed to your terminal.
 4. Go up one level within your terminal and run `jekyll -v`. You most likely will get `Jekyll 4.3.x` printed to your screen.
 
-This little experiment shows how Bundler is used to run a specific version. Remember, to change your Gemfile back to use Jekyll 4.x.
+This little experiment shows how Bundler is used to run a specific version. Remember, to change your Gemfile back to use Jekyll 4.x. More information on Bundler and Gemfiles can be found in this [article](https://www.moncefbelyamani.com/the-beginner-s-guide-to-bundler-and-gemfiles/) written by Moncef Belyami.
 
 
 # Going Further
