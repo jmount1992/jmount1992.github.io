@@ -4,6 +4,7 @@ title: James Mount
 email: jmount1992@example.com
 description: A website about James Mount, a robotics engineer, and STEM communicator with a passion for life.
 url: "https://jamesmount.tech" 
+baseurl: /
 minimal_mistakes_skin: deep_sea
 words_per_minute: 200
 
