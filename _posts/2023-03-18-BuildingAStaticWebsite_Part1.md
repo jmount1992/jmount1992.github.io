@@ -9,10 +9,9 @@ tags:
 excerpt: Gain an understanding of why we use static site generators and work your way through a step-by-step guide on how to build your first static website with Jekyll.
 ---
 
-This tutorial will first explain the reasoning behind using a static site generator, specifically Jekyll, before providing a step-by-step guide on how to create your first static website using Jekyll.
+This tutorial will first explain the reasoning behind using a static site generator, specifically Jekyll, before providing a step-by-step guide on how to create your first static website using Jekyll. You can find a working example of the final product [here](https://jamesmount.tech/building_a_static_website_part_1/) as well as the complete code within this [repository](https://github.com/jmount1992/building_a_static_website_part_1).
 
 This is the first article in the static website building series. 
-
 
 **Prerequisites**: Familiarity with using your operating system's terminal, an understanding of how the web works, and some knowledge of HTML, CSS, and JavaScript is recommended. Feel free to check out the [Understanding The Web]({% post_url 2023-03-15-UnderstandingTheWeb %}) article to gain some insights on how the web works.
 
@@ -107,7 +106,7 @@ touch gemfile
 
 {%tab step_2a Windows %}
 ```bash
-copy gemfile+
+copy Gemfile+
 ```
 {% endtab %}
 {% endtabs %}
@@ -115,6 +114,8 @@ copy gemfile+
 {:start="3"}
 3. Add the following to the Gemfile. We will talk about the Gemfile and its contents later.
 
+{% tabs step_3a %}
+{% tab step_3a code %}
 ```ruby
 source "https://rubygems.org"
 gem "jekyll", "~> 4.3.2"
@@ -125,6 +126,8 @@ gem "jekyll", "~> 4.3.2"
 gem "webrick", "~> 1.7"
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="4"}
 4. Install the gems.
@@ -178,12 +181,16 @@ copy index.md+
 {:start="6"}
 6. Add the following code to index.md. Any code between the two sets of `---` are what is called front matter. Jekyll will only process any markdown files that contain front matter. 
 
+{% tabs step_6a %}
+{% tab step_6a code %}
 ```markdown
 ---
 ---
 # My Website 
 Welcome to my website!
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="7"}
 7. Locally build and serve your website. The `--livereload` will automatically rebuild and serve the website if we make any changes to any of the content files. However, if our changes result in a bad state you may need to kill and restart the process.
@@ -241,6 +248,8 @@ mkdir _layouts && copy _layouts/default.html+
 {:start="2"}
 2. Add the following code to _layouts/default.html. The `{% raw %}{{ }}{% endraw %}` and `{% raw %}{% %}{% endraw %}` are Liquid syntax for objects and tags respectively. Objects contain content to be displayed on the page. Tags create logic and control flow for templates. Here we are getting the page title and content objects, as well as including the navigation.html file (we will create this file in the next steps).
 
+{% tabs step_2b %}
+{% tab step_2b code %}
 ```html
 {% raw %}<!doctype html>
 <html>
@@ -255,6 +264,8 @@ mkdir _layouts && copy _layouts/default.html+
     </body>
 </html>{% endraw %}
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="3"}
 3. Create a folder called `_includes` and add a file called `navigation.html`. Includes are snippets that can be used elsewhere. This also helps avoid duplication. Here we will use it for navigation and include it, else we would have to write a navigation menu on each page.
@@ -282,6 +293,8 @@ mkdir _includes && copy _includes/navigation.html+
 {:start="4"}
 4. Add the following code to `_includes/navigation.html`.
 
+{% tabs step_4a %}
+{% tab step_4a code %}
 ```html
 {% raw %}<nav>
     {% for item in site.data.navigation %}
@@ -289,41 +302,49 @@ mkdir _includes && copy _includes/navigation.html+
     {% endfor %}
 </nav>{% endraw %}
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="5"}
-5. In the code above we are referring to the object site.data.navigation. Jekyll supports loading of data from various file types such as YAML, JSON, and CSV. These files must be located in the data directory. Create the `_data` directory and a file called `navigation.yaml`. More information on Jekyll variables can be found [here](https://jekyllrb.com/docs/variables/).
+5. In the code above we are referring to the object site.data.navigation. Jekyll supports loading of data from various file types such as YAML, JSON, and CSV. These files must be located in the data directory. Create the `_data` directory and a file called `navigation.yml`. More information on Jekyll variables can be found [here](https://jekyllrb.com/docs/variables/).
 
 {% tabs step_5b %}
 {%tab step_5b Ubuntu %}
 ```bash
-mkdir _data_ && touch _data/navigation.html
+mkdir _data && touch _data/navigation.yml
 ```
 {% endtab %}
 
 {%tab step_5b MacOS %}
 ```bash
-mkdir _data_ && touch _data/navigation.html
+mkdir _data && touch _data/navigation.yml
 ```
 {% endtab %}
 
 {%tab step_5b Windows %}
 ```bash
-mkdir _data_ && copy _data/navigation.html+
+mkdir _data && copy _data/navigation.yml+
 ```
 {% endtab %}
 {% endtabs %}
 
 {:start="6"}
-6. In `_data/navigation.html` add the following code. We will add additional links as we add pages to our site.
+6. In `_data/navigation.yml` add the following code. We will add additional links as we add pages to our site.
 
+{% tabs step_6b %}
+{% tab step_6b code %}
 ```yaml
 - name: Home
   link: /
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="7"}
 7. In `index.md` add `layout: default` to the front matter. Your `index.md` file should now look like this.
 
+{% tabs step_7b %}
+{% tab step_7b code %}
 ```markdown
 ---
 layout: default
@@ -331,6 +352,8 @@ layout: default
 # My Website
 Welcome to my website!
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="8"}
 8. You should see `Home` at the top of your website. If not, you may need to rerun the jekyll build and serve command.
@@ -381,6 +404,8 @@ copy about_me.md+ && copy projects.md+
 {:start="10"}
 10. Add the following code to `about_me.md`
 
+{% tabs step_10b %}
+{% tab step_10b code %}
 ```markdown
 ---
 layout: default
@@ -388,10 +413,14 @@ layout: default
 # About Me
 Here are some interesting facts about me.
 ```
+{% endtab %}
+{% endtabs %}
 
-{:start="10"}
-10. Add the following code to `projects.md`
+{:start="11"}
+11. Add the following code to `projects.md`
 
+{% tabs step_11b %}
+{% tab step_11b code %}
 ```markdown
 ---
 layout: default
@@ -399,18 +428,24 @@ layout: default
 # Prjects
 Here are my projects.
 ```
+{% endtab %}
+{% endtabs %}
 
-{:start="11"}
-11. Add each page to the navigation bar by adding the appropriate details into `_data/navigation.yaml`. Your _data/navigation.yaml shoud look something like this.
+{:start="12"}
+12. Add each page to the navigation bar by adding the appropriate details into `_data/navigation.yaml`, the file shoud look something like this.
 
+{% tabs step_12b %}
+{% tab step_12b code %}
 ```yaml
 - name: Home
   link: /
 - name: About Me
-  link: /about
+  link: /about_me
 - name: Projects
   link: /projects
 ```
+{% endtab %}
+{% endtabs %}
 
 You should now have a website that has three pages, each with a navigation bar at the top. Hopefully, you can see how easy Jekyll makes by using templates.
 
@@ -423,38 +458,44 @@ Jekyll was originally created for blogging. As a result, Jekyll uses the special
 {% tabs step_1c %}
 {%tab step_1c Ubuntu %}
 ```bash
-mkdir _posts && touch _posts/<date>_pub1.md && touch _posts/<date>_pub1.md
+mkdir _posts && touch _posts/<date>-pub1.md && touch _posts/<date>-pub2.md
 ```
 {% endtab %}
 
 {%tab step_1c MacOS %}
 ```bash
-mkdir _posts && touch _posts/<date>_pub1.md && touch _posts/<date>_pub1.md
+mkdir _posts && touch _posts/<date>-pub1.md && touch _posts/<date>-pub2.md
 ```
 {% endtab %}
 
 {%tab step_1c Windows %}
 ```bash
-mkdir _posts && copy _posts/<date>_pub1.md+ && copy _posts/<date>_pub1.md+
+mkdir _posts && copy _posts/<date>-pub2.md+ && copy _posts/<date>-pub2.md+
 ```
 {% endtab %}
 {% endtabs %}
 
 {:start="2"}
-2. Add the following code to each post, changing the `<numnber>` to 1 and 2 respectively.
+2. Add the following code to each post, changing the `<number>` to 1 and 2 respectively.
 
+{% tabs step_2c %}
+{% tab step_2c code %}
 ```markdown
 ---
-title: Page <number>
+title: Post <number>
 ---
 The few lines will be the excerpt for post <number>.
 
 This second paragraph has some more information.
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="3"}
 3. You may have noticed we didn't include the `layout` key within the front matter. We are going to create a new layout for our posts as we want them to look slightly different from our main pages. Create the file `_layout/post.html` and add the following code. Here we are using front matter to inherit the default layout. 
 
+{% tabs step_3c %}
+{% tab step_3c code %}
 ```html
 ---
 layout: default
@@ -470,10 +511,14 @@ layout: default
 
 {{ content }}{% endraw %}
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="4"}
 4. Instead of adding `layout: post` to each post, we can use a configuration file with predefined defaults. Create a `_config.yml` file in the root directory and add the following code. The first set here is saying that all files within the `_posts` directory should use the layout `post` and the default author is set to `Jane Bloggs`. The second set is saying all pages, that aren't contained within the posts folder, should use the `default` layout. If you wanted you could go and remove the layout key from our existing pages. Whenever, you make changes to the Jekyll configuration file you will need to restart the website server to see the affects. Additional information on front matter defaults can be found [here](https://jekyllrb.com/docs/configuration/front-matter-defaults/). 
 
+{% tabs step_4c %}
+{% tab step_4c code %}
 ```yaml
 defaults:
   - scope:
@@ -488,6 +533,8 @@ defaults:
     values:
       layout: "default"
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="5"}
 5. The deployment article within this static website building series utilises Github Pages for serving your website. Github page servers are most likely not located within your time zone. This can lead to some odd things happening. You should also add your time zone to the configuration file. For example, if you are from Brisbane, Australia, you would add the following code `timezone: Australia/Brisbane` to `_config.yml`. You can find a list of time zones [here](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). Remember, as we made changes to the configuration file you will need to reserve the website.
@@ -495,6 +542,8 @@ defaults:
 {:start="6"}
 6. Now we need a page to display and link to our individual posts. Create a new page, called `posts.md` in the root directory of the website and add the following code. Make sure you also add the appropriate entry into the `navigation.yml` file. In the code below, you can see that we access the posts using the code `site.posts` which can be used, along with a for loop, to cycle through the posts and display the title and excerpt of each post.
 
+{% tabs step_6c %}
+{% tab step_6c code %}
 ```markdown
 ---
 ---
@@ -505,6 +554,8 @@ defaults:
 {{ post.excerpt }}
 {% endfor %} {% endraw %}
 ```
+{% endtab %}
+{% endtabs %}
 
 Okay that is enough about blogging. Posts are effectively a special type of what Jekyll calls *Collections*. We can use [collections](https://jekyllrb.com/docs/step-by-step/09-collections/) to our advantage when things belong to the same group, projects for example.
 
@@ -512,10 +563,14 @@ Okay that is enough about blogging. Posts are effectively a special type of what
 
 1. To create a collection make a folder using the format `_<collection_name>` and add this collection name to our configuration file under the `collections` key. In this example, create a folder called `_projects` within the root website directory and add the following code to your configuration file. 
 
+{% tabs step_1d %}
+{% tab step_1d code %}
 ```yaml
 collections:
   projects:
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="2"}
 2. In the projects folder create two markdown files called `project1.md` and `project2.md`. You will notice that we don't require a special naming convention like posts. 
@@ -523,17 +578,23 @@ collections:
 {:start="3"}
 3. Copy the following into each of the project markdown files, replacing the `<number>` with the appropriate value.
 
+{% tabs step_3d %}
+{% tab step_3d code %}
 ```markdown
 ---
 title: Project <number>
-project_url: jamesmount.tech
+project_url: https://jamesmount.tech/
 description: A short description about the project.
 ---
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="4"}
 4. Change the `projects.md` file to act as a "homepage" for your projects by creating a list linking to each project. We are assuming here that each project has a page outside of your website, for example it could be a link to a Github repository, or an article.
 
+{% tabs step_4d %}
+{% tab step_4d code %}
 ```markdown
 {% raw %}---
 ---
@@ -544,6 +605,8 @@ description: A short description about the project.
 {{ project.description }}
 {% endfor %}{% endraw %}
 ```
+{% endtab %}
+{% endtabs %}
 
 Restart the local webserver, as we made changes to the configuration file, and see the changes. That is how easy it is to use collections and to quickly build lists of projects, publications, reviews, or whatever really. We could even go a step further and make a page for each project within our website, similar to a post. However, we won't do that here.
 
@@ -554,6 +617,8 @@ The website is fairly bland. There are no pictures, colours, or dynamic behaviou
 
 1. Create a folder called `_sass` in the root directory and add a `main.scss` file with the following code. This code will make the font size of each navigation bar item larger and all `<h1>` headings to be coloured green.
 
+{% tabs step_1e %}
+{% tab step_1e code %}
 ```css
 h1 {
     color: green;
@@ -563,19 +628,27 @@ h1 {
     font-size: 1em;
 }
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="2"}
-2. Create a directory called `assets`, and then create a `css` folder within the new assets folder. Copy the following code into a Sass file located at `assets/css/styles.css`. Remember, Jekyll requires front-matter in order to know the file needs to be processed. This code tells Sass to look for a file called `main.scss` located in the `_sass` folder.
+2. Create a directory called `assets`, and then create a `css` folder within the new assets folder. Copy the following code into a Sass file located at `assets/css/styles.scss`. Remember, Jekyll requires front-matter in order to know the file needs to be processed. This code tells Sass to look for a file called `main.scss` located in the `_sass` folder.
 
+{% tabs step_2e %}
+{% tab step_2e code %}
 ```css
 ---
 ---
 @import "main";
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="3"}
-3. We need to reference this style sheet within our HTML layouts. Fortunately, as all sheets inherit from our default layout, we only need to add a single line. Add <link rel="stylesheet" href="/assets/css/styles.css"> between the <head> and </head> tags in _layouts/default.html. The `_layouts/default.html` should now look like this.
+3. We need to reference this style sheet within our HTML layouts. Fortunately, as all sheets inherit from our default layout, we only need to add a single line. Add `<link rel="stylesheet" href="/assets/css/styles.css">` between the `<head>` and `</head>` tags in `_layouts/default.html`. The `_layouts/default.html` should now look like this.
 
+{% tabs step_3e %}
+{% tab step_3e code %}
 ```html
 {% raw %}<!doctype html>
 <html>
@@ -591,10 +664,14 @@ h1 {
     </body>
 </html>{% endraw %}
 ```
+{% endtab %}
+{% endtabs %}
 
 {:start="4"}
 4. Now update the `_includes/navigation.html` to use the new CSS class. Change `_includes/navigation.html` to the following code.
 
+{% tabs step_4e %}
+{% tab step_4e code %}
 ```html
 {% raw %}<nav>
     {% for item in site.data.navigation %}
@@ -602,6 +679,8 @@ h1 {
     {% endfor %}
 </nav>{% endraw %}
 ```
+{% endtab %}
+{% endtabs %}
 
 ## A Little More About Bundler and Gemfiles
 
