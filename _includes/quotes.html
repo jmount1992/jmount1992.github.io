@@ -1,0 +1,14 @@
+
+{% for quote in  site.data.inspirational-quotes %}
+
+<div class="quoteblock">
+    <blockquote style="background-color: rgba(0, 46, 125, 0); padding: 0.75rem; border: 0.25em solid #002E7D; border-radius: 2rem;">&ldquo;{{ quote.quote }}&rdquo; <br><cite>{{ quote.person }}</cite></blockquote>
+</div>
+
+{% endfor %}
+
+<style>
+    .quoteblock {
+        display: none;
+    }
+</style>

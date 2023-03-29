@@ -93,7 +93,7 @@ footer:
 # Custom Javascript
 after_footer_scripts:
   - /assets/js/tabs.js
-  - /assets/js/slider.js
+  - /assets/js/quotes.js
 
   
 # Page Defaults
