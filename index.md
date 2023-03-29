@@ -33,9 +33,6 @@ Identifying and solving people's problems utilising technology is my passion. I 
 
 {% include feature_row.html %}
 
-
-
 {% include quotes.html %}
 
-<!-- {% assign random = site.time | date: "%s%N" | modulo: site.data.inspirational-quotes.size %}
-<blockquote style="background-color: rgba(0, 46, 125, 0); padding: 0.75rem; border: 0.25em solid #002E7D; border-radius: 2rem;">&ldquo;{{ site.data.inspirational-quotes[random].quote }}&rdquo; <br><cite>{{ site.data.inspirational-quotes[random].person }}</cite></blockquote> -->
+
