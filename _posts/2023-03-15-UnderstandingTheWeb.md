@@ -7,6 +7,7 @@ tags:
   - knowledge
   - fundamentals
 excerpt: Understanding the basics of the web is critical in helping you develop website and web applications. This article presents the basics of how the web works, what happens when we enter a web address into a browser, and how we could go about creating a website. By the end of this article you should understand the difference between a web-server, a client, dynamic and static websites, and know of some tools that can help make your life easier if you wish to create your own website.
+last_modified_at: 2023-03-15
 ---
 
 Understanding the basics of the web is critical in helping you develop websites and web applications. This article presents the basics of how the web works, what happens when we enter a web address into a browser, and how we could go about creating a website. By the end of this article you should understand the difference between a web-server, a client, dynamic and static websites, and know of some tools that can help make your life easier if you wish to create your own website. This is not meant to be a deep dive, but rather provide you with some basic knowledge to help you understand the basics and get started. If you are already familiar with the web, and are interested in creating your own website, check out the <a href="javascript: document.body.scrollIntoView(false);">related articles</a> down below.
@@ -58,7 +59,7 @@ Some of these tasks are common for web-servers. For example, every website needs
 
 ### Dynamic Web-Server Stack Example
 
-A dynamic web-server is one where the server, sometimes referred to as the back-end, constructs the website based on details sent via the client. For example, a social media website shows a feed based on who is logged in. A dynamic web-server may consist of the following:
+last_modified_at: 2023-03-29ometimes referred to as the back-end, constructs the website based on details sent via the client. For example, a social media website shows a feed based on who is logged in. A dynamic web-server may consist of the following:
 
 1. The web-server itself which handles HTTP/HTTPS connections and domain logic (e.g., NGINX).
 2. The web-server gateway interface (WSGI) application server. The WSGI application server acts as a middle-man, or middleware, between the web-server and your actual server application (e.g., Gunicorn). Think of it like a translator between the web-server and the actual application. This means you can focus more on your application rather than things like load distribution and multiple processes of the web application running.

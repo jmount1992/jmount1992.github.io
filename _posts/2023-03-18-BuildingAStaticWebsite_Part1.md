@@ -7,6 +7,7 @@ tags:
   - markdown
   - tutorial
 excerpt: Gain an understanding of why we use static site generators and work your way through a step-by-step guide on how to build your first static website with Jekyll.
+last_modified_at: 2023-03-29
 ---
 
 This tutorial will first explain the reasoning behind using a static site generator, specifically Jekyll, before providing a step-by-step guide on how to create your first static website using Jekyll. You can find a working example of the final product [here](https://jamesmount.tech/building_a_static_website_part_1/) as well as the complete code within this [repository](https://github.com/jmount1992/building_a_static_website_part_1).
