@@ -95,6 +95,15 @@ after_footer_scripts:
   - /assets/js/tabs.js
   - /assets/js/quotes.js
 
+
+# Comments
+
+comments:
+  provider: "facebook"
+  facebook:
+    num_posts: 5 # 5 (default)
+    colorscheme: dark # "light" (default), "dark"
+
   
 # Page Defaults
 defaults:
@@ -107,7 +116,7 @@ defaults:
       author_profile: true
       read_time: true
       show_date: true
-      # comments: true
+      comments: true
       share: true
       related: true
       classes: wide
