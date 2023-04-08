@@ -7,7 +7,7 @@ tags:
   - markdown
   - tutorial
 excerpt: Gain an understanding of why we use static site generators and work your way through a step-by-step guide on how to build your first static website with Jekyll.
-last_modified_at: 2023-03-29
+last_modified_at: 2023-04-08
 ---
 
 This tutorial will first explain the reasoning behind using a static site generator, specifically Jekyll, before providing a step-by-step guide on how to create your first static website using Jekyll. You can find a working example of the final product [here](https://jamesmount.tech/building_a_static_website_part_1/) as well as the complete code within this [repository](https://github.com/jmount1992/building_a_static_website_part_1).
@@ -247,7 +247,7 @@ mkdir _layouts && copy _layouts/default.html+
 {% endtabs %}
 
 {:start="2"}
-2. Add the following code to _layouts/default.html. The `{% raw %}{{ }}{% endraw %}` and `{% raw %}{% %}{% endraw %}` are Liquid syntax for objects and tags respectively. Objects contain content to be displayed on the page. Tags create logic and control flow for templates. Here we are getting the page title and content objects, as well as including the navigation.html file (we will create this file in the next steps).
+2. Add the following code to _layouts/default.html. The `{% raw %}{{ }}{% endraw %}` and `{% raw %}{% %}{% endraw %}` are Liquid syntax for objects and tags respectively. Objects contain content to be displayed on the page. Tags create logic and control flow for templates. Here we are getting the page title and content objects, as well as including the navigation.html file (we will create this file in the next steps)... Hold up, didn't I say the whole point of using a static site generator was to get away from writing HTML, CSS, and Javascript? Well yes, we will see in Part 2 of this series we can leverage themes which already have HTML, CSS, and Javascript. However, for now we want to focus on Jekyll specifically rather than having to understand the nuances of a theme and Jekyll at the same time.
 
 {% tabs step_2b %}
 {% tab step_2b code %}
