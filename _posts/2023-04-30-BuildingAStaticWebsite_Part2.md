@@ -347,3 +347,5 @@ You should now have everything you need to know to create a pretty fantastic sta
 4. Once you are happy with all that, get cracking.
 
 In the next article we will look at how we can easily deploy our website using Github Pages and make it available on the internet.
+
+If you are enjoying this three part series, please drop a comment, send a [message](/about_me/#contact_me), or share it with friends. If there is anything that you think can be improved, please drop a comment or send a [message](/about_me/#contact_me).

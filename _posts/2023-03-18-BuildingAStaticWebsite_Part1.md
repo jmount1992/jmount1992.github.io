@@ -685,7 +685,7 @@ h1 {
 
 ## A Little More About Bundler and Gemfiles
 
-A Gemfile is a list of dependencies required by your Ruby project. Bundler is a special Gem and acts like a package manager and virtual environment. If you are familiar with Python and Pip, you can think of a Gemfile similar to a requirements.txt and Bundler similar to Pip. However, we can also use bundler to execute commands using the current environment by prefixing the command with `bundle exec`. If you wish, do the following.
+A Gemfile is a list of dependencies required by your Ruby project. Bundler is a special Gem and acts like a package manager and virtual environment. If you are familiar with Python and Pip, you can think of a Gemfile as being similar to a requirements.txt and Bundler akin to Pip. However, we can also use bundler to execute commands using the current environment by prefixing the command with `bundle exec`. If you wish, do the following.
 
 1. Change the Gemfile to use a different version of Jekyll. For example, change it from `gem "jekyll", "~> 4.3.2"` to `gem "jekyll", "~> 3.9.1"`. 
 2. Run `bundle install`.
@@ -698,3 +698,5 @@ This little experiment shows how Bundler is used to run a specific version. Reme
 # Going Further
 
 Congratulations on creating your first static website. I know it is bland and it is only served locally, however, the next two articles in this series will overcome those minor details. This article was put together by reading the [Jekyll documentation](https://jekyllrb.com/docs/) and its [getting started guide](https://jekyllrb.com/docs/step-by-step/01-setup/). It is strongly encouraged you take some time to go through the Jekyll getting started guide as well the documentation.
+
+If you are enjoying this three part series, please drop a comment, send a [message](/about_me/#contact_me), or share it with friends. If there is anything that you think can be improved, please drop a comment or send a [message](/about_me/#contact_me).
