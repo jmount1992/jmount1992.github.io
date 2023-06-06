@@ -30,7 +30,7 @@ Check out the new website. You will find it already looks much prettier than wha
 
 ## Gemfile Exploration
 
-We will start by exploring the Gemfile. It all looks fairly standard. You will even see some comments and commented code pointing towards how you can use Jekyll with GitHub Pages. We will explore these lines in more detail in the next article within this series, where we look at deployment. There is also some gem files to for specific platforms, we can leave those be. Your Gemfile may now look something like this:
+We will start by exploring the Gemfile. It all looks fairly standard. You will even see some comments and commented code pointing towards how you can use Jekyll with GitHub Pages. We will explore these lines in more detail in the next article within this series, where we look at deployment. There is also some gem files for specific operating systems, we can leave those be. Your Gemfile may now look something like this:
 
 {% tabs step_1 %}
 {% tab step_1 code %}
