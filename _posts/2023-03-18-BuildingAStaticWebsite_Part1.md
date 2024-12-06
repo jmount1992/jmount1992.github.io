@@ -7,7 +7,7 @@ tags:
   - markdown
   - tutorial
 excerpt: Gain an understanding of why we use static site generators and work your way through a step-by-step guide on how to build your first static website with Jekyll.
-last_modified_at: 2023-04-08
+last_modified_at: 2024-12-06
 ---
 
 This tutorial will first explain the reasoning behind using a static site generator, specifically Jekyll, before providing a step-by-step guide on how to create your first static website using Jekyll. You can find a working example of the final product [here](https://jamesmount.tech/building_a_static_website_part_1/) as well as the complete code within this [repository](https://github.com/jmount1992/building_a_static_website_part_1).
@@ -31,7 +31,7 @@ To create a static website from scratch we would have to:
     - Use your own PC (opening your PC up to the world might bring about some security concerns).
 3. Deploy our website to the file hosting service.
 4. Setup a web-server, like NGINX. This would include:
-    - Setting up security certificates (SSL) as we would want HTTPS; and
+    - Setting up security certificates (SSL) as we probably would want HTTPS; and
     - Listening to requests.
 5. Register and setup up the domain with a DNS service.
 6. Establish some form of traffic reporting (optional).
@@ -39,7 +39,7 @@ To create a static website from scratch we would have to:
 
 As you can see there are quite a lot of steps, especially, when you probably want to get up and running quickly and want to focus on content. We could make our life a little easier by using a website template that already has HTML, CSS, and Javascript alongside Github Pages. However, even then we are still writing in HTML, which still isn't as natural as writing a word document. We would also still have to do pagination, navigation bars, latest post links, etc. This can make it cumbersome and quite painful. Instead we could use what is known as a static site generator.
 
-**Note**: You could also use a website builder such as Wix or WordPress. However, what if we want to be cheap and not have to pay for the service?
+**Note**: You could also use a website builder such as Wix or WordPress. Most domain name registraion services, such as [GoDaddy](https://www.godaddy.com/), provide website building capabilities. However, what if we want to be cheap and not have to pay for the service?
 
 # Static Site Generators
 
@@ -53,11 +53,11 @@ Jekyll is one of many static site generators. However, Github Pages utilises Jek
 
 ## Ruby 101
 
-Ruby is a programming language. In the Ruby language you will hear a lot about Gems. Gems are reusable pieces of code. If you know Python or C/C++ you might think of these as modules or libraries. A Gemfile is a list of gems required by a project, similar to a Python requirements file or a C/C++ header file. There is a special Gem called *Bundler*. Bundler is like Python's pip, it is used to install a gemfile, but can also be used to execute Gems using the current environment (like a virtual environment). More info on Bundler and Gemfiles can be found in later in the [article](#a-little-more-about-bundler-and-gemfiles). 
+Ruby is a programming language. In the Ruby language you will hear a lot about Gems. Gems are reusable pieces of code. If you know Python or C/C++ you might think of these as modules or libraries. A Gemfile is a list of gems required by a project, similar to a Python requirements file or a set of included C/C++ header files. There is a special Gem called *Bundler*. Bundler is like Python's pip, it is used to install a gemfile, but can also be used to execute Gems using the current environment (like a virtual environment). More info on Bundler and Gemfiles can be found in later in the [article](#a-little-more-about-bundler-and-gemfiles). 
 
 # Creating Your First Website
 
-Okay, that was a really quick intro into the tools we will be using and why we are using them. However, I always find it best to dive in to start learning. So let's get started in creating a basic static website. The result won't be aesthetically pleasing, however, it is important you work through these steps as they introduce you to the concepts within Jekyll and will help ultimately help you in the long run. The next article will help you beautify your website using themes, but understanding themes, can be quite difficult if you don't understand the basics. So I encourage you to work through these steps carefully, making sure you take your time.
+Okay, that was a really quick intro into the tools we will be using and why we are using them. However, I always find it best to dive in to start learning. So let's get started in creating a basic static website. The result won't be aesthetically pleasing, however, it is important you work through these steps as they introduce you to the concepts within Jekyll and will ultimately help you in the long run. The next article will help you beautify your website using themes, but understanding themes, can be quite difficult if you don't understand the basics. So I encourage you to work through these steps carefully, making sure you take your time.
 
 **Note**: Code is included for you to copy and paste into a terminal to help speed up the process. Or if you aren't familiar with the terminal on your operating system, use whatever process you wish to perform the steps.
 
@@ -216,7 +216,7 @@ bundle exec jekyll serve --livereload
 {% endtab %}
 {% endtabs %}
 
-You should now be able to go to the IP address and port outputted by the command above in a browser to view your website. Most likely the address will be `127.0.0.1:4000`. If you cannot view it, see if there are any errors outputted by the above command, and work your way through them with the help of Google. 
+You should now be able to go to the IP address and port outputted by the command above in a browser to view your website. Most likely the address will be `127.0.0.1:4000`. If you cannot view it, see if there are any errors outputted by the above command, and work your way through them with the help of online sources. 
 
 **Note**: A locally served website is one that is only visible to you, and maybe your local network depending on your network settings. In a future article within this series we will talk about deploying your website and making it accessible by anyone with an internet connection.
 
@@ -247,7 +247,7 @@ mkdir _layouts && copy _layouts/default.html+
 {% endtabs %}
 
 {:start="2"}
-2. Add the following code to _layouts/default.html. The `{% raw %}{{ }}{% endraw %}` and `{% raw %}{% %}{% endraw %}` are Liquid syntax for objects and tags respectively. Objects contain content to be displayed on the page. Tags create logic and control flow for templates. Here we are getting the page title and content objects, as well as including the navigation.html file (we will create this file in the next steps)... Hold up, didn't I say the whole point of using a static site generator was to get away from writing HTML, CSS, and Javascript? Well yes, we will see in Part 2 of this series we can leverage themes which already have HTML, CSS, and Javascript. However, for now we want to focus on Jekyll specifically rather than having to understand the nuances of a theme and Jekyll at the same time.
+2. Add the following code to `_layouts/default.html` file. The `{% raw %}{{ }}{% endraw %}` and `{% raw %}{% %}{% endraw %}` are Liquid syntax for objects and tags respectively. Objects contain content to be displayed on the page. Tags create logic and control flow for templates. Here we are getting the page title and content objects, as well as including the `navigation.html` file (we will create this file in the next steps). Hold up, didn't we say the whole point of using a static site generator was to get away from writing HTML, CSS, and Javascript? Well yes, we will see in Part 2 of this series we can leverage themes which already have HTML, CSS, and Javascript. However, for now we want to focus on Jekyll specifically rather than having to understand the nuances of a theme and Jekyll at the same time.
 
 {% tabs step_2b %}
 {% tab step_2b code %}
@@ -294,8 +294,8 @@ mkdir _includes && copy _includes/navigation.html+
 {:start="4"}
 4. Add the following code to `_includes/navigation.html`.
 
-{% tabs step_4a %}
-{% tab step_4a code %}
+{% tabs step_4b %}
+{% tab step_4b code %}
 ```html
 {% raw %}<nav>
     {% for item in site.data.navigation %}
@@ -307,7 +307,7 @@ mkdir _includes && copy _includes/navigation.html+
 {% endtabs %}
 
 {:start="5"}
-5. In the code above we are referring to the object site.data.navigation. Jekyll supports loading of data from various file types such as YAML, JSON, and CSV. These files must be located in the data directory. Create the `_data` directory and a file called `navigation.yml`. More information on Jekyll variables can be found [here](https://jekyllrb.com/docs/variables/).
+5. In the code above we are referring to the object `site.data.navigation`. Jekyll supports loading of data from various file types such as YAML, JSON, and CSV. These files must be located in the data directory. Create the `_data` directory and a file called `navigation.yml`. More information on Jekyll variables can be found [here](https://jekyllrb.com/docs/variables/).
 
 {% tabs step_5b %}
 {%tab step_5b Ubuntu %}
@@ -330,7 +330,7 @@ mkdir _data && copy _data/navigation.yml+
 {% endtabs %}
 
 {:start="6"}
-6. In `_data/navigation.yml` add the following code. We will add additional links as we add pages to our site.
+6. In the `_data/navigation.yml` file add the following code. We will add additional links as we add pages to our site.
 
 {% tabs step_6b %}
 {% tab step_6b code %}
@@ -448,11 +448,11 @@ Here are my projects.
 {% endtab %}
 {% endtabs %}
 
-You should now have a website that has three pages, each with a navigation bar at the top. Hopefully, you can see how easy Jekyll makes by using templates.
+You should now have a website that has three pages, each with a navigation bar at the top. Hopefully, you can see the potential of building websites using Jekyll templates.
 
 ## Blogging with Jekyll
 
-Jekyll was originally created for blogging. As a result, Jekyll uses the special `_posts` directory along with a specific naming format for markdown files contained with the posts folder. Markdown files within the posts folder must use the format `yyyy-mm-dd-<title>.md`. 
+Jekyll was originally created for blogging. As a result, Jekyll uses the special `_posts` directory along with a specific naming format for markdown files contained within the posts folder. Markdown files within the posts folder must use the format `yyyy-mm-dd-<title>.md`. 
 
 1. Create a post directory and add two files, replacing `<date>` with today's date.
 
@@ -682,6 +682,8 @@ h1 {
 ```
 {% endtab %}
 {% endtabs %}
+
+Feel free to restart the local website and view the changes. By using pre-existing themes we can leverage work already done by others to have an aesthetically pleasing website without having to spend vast quantities of time learning CSS and JavaScript. Thank you to those who have created the themes!
 
 ## A Little More About Bundler and Gemfiles
 
